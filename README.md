@@ -1,3 +1,5 @@
+Title: Hi Shrithuuuu
+
 These are the things you need to take care of:
 1. Drinking water
 2. Sleeping well (that anyways you do)
@@ -5,4 +7,4 @@ These are the things you need to take care of:
 4. Being fit and healthyyyyy
 
 Then you will be like this:
-Add the emoji.jpg image
+Add this file: emoji.jpg
