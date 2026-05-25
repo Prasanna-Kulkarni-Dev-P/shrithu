@@ -5,4 +5,4 @@ These are the things you need to take care of:
 4. Being fit and healthyyyyy
 
 Then you will be like this:
-Add the emoji.png image
+Add the emoji.jpg image
