@@ -6,7 +6,7 @@ canvas.height = window.innerHeight;
 
 const balls = [];
 
-const NUM_BALLS = 20;
+const NUM_BALLS = 50;
 
 for (let i = 0; i < NUM_BALLS; i++) {
 
