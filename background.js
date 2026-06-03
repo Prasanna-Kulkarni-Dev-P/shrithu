@@ -23,7 +23,7 @@ for (let i = 0; i < NUM_BALLS; i++) {
         ${Math.floor(Math.random() * 256)},
         ${Math.floor(Math.random() * 256)},
         ${Math.floor(Math.random() * 256)},
-        0.3
+        0.5
         )`
     });
 }
