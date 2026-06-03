@@ -13,7 +13,30 @@
             padding: 0 20px;
             color: #333;
             line-height: 1.6;
+
+            /* Link the animation called "colorShift" */
+            /* 10s = animation duration, infinite = loops forever */
+            animation: colorShift 10s infinite alternate; 
+            margin: 0;
+            height: 100vh;
         }
+
+        /* Define the color stages of the animation */
+        @keyframes colorShift {
+            0% {
+                background-color: #ff9a9e; /* Soft Pink */
+            }
+            33% {
+                background-color: #a1c4fd; /* Soft Blue */
+            }
+            66% {
+                background-color: #c2e9fb; /* Light Teal */
+            }
+            100% {
+                background-color: #d4fc79; /* Light Green */
+            }
+        }
+        
         h1 {
             color: #1a1a1a;
             border-bottom: 2px solid #eaecef;
