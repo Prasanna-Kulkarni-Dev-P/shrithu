@@ -11,13 +11,20 @@ const NUM_BALLS = 20;
 for (let i = 0; i < NUM_BALLS; i++) {
 
     balls.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
 
-        vx: (Math.random() - 0.5) * 4,
-        vy: (Math.random() - 0.5) * 4,
+    vx: (Math.random() - 0.5) * 4,
+    vy: (Math.random() - 0.5) * 4,
 
-        radius: 10 + Math.random() * 20
+    radius: 10 + Math.random() * 20,
+
+    color: `rgba(
+        ${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)},
+        0.1
+        )`
     });
 }
 
@@ -53,7 +60,7 @@ function animate() {
             2 * Math.PI
         );
 
-        ctx.fillStyle = "red";
+        ctx.fillStyle = ball.color;
         ctx.fill();
     }
 
