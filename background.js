@@ -4,35 +4,58 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let x = 100;
-let y = 100;
+const balls = [];
 
-let vx = 2;   // velocity in x direction
-let vy = 1.5; // velocity in y direction
+const NUM_BALLS = 20;
 
-const radius = 30;
+for (let i = 0; i < NUM_BALLS; i++) {
+
+    balls.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+
+        vx: (Math.random() - 0.5) * 4,
+        vy: (Math.random() - 0.5) * 4,
+
+        radius: 10 + Math.random() * 20
+    });
+}
 
 function animate() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    x += vx;
-    y += vy;
+    for (const ball of balls) {
 
-    // Bounce on left/right walls
-    if (x < radius || x > canvas.width - radius) {
-        vx = -vx;
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+
+        if (
+            ball.x < ball.radius ||
+            ball.x > canvas.width - ball.radius
+        ) {
+            ball.vx = -ball.vx;
+        }
+
+        if (
+            ball.y < ball.radius ||
+            ball.y > canvas.height - ball.radius
+        ) {
+            ball.vy = -ball.vy;
+        }
+
+        ctx.beginPath();
+        ctx.arc(
+            ball.x,
+            ball.y,
+            ball.radius,
+            0,
+            2 * Math.PI
+        );
+
+        ctx.fillStyle = "red";
+        ctx.fill();
     }
-
-    // Bounce on top/bottom walls
-    if (y < radius || y > canvas.height - radius) {
-        vy = -vy;
-    }
-
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = "red";
-    ctx.fill();
 
     requestAnimationFrame(animate);
 }
